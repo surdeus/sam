@@ -1,7 +1,12 @@
 #!/bin/env rc
 
 if(test $#* '!=' 0){
-	files = `{goblin ls -r 100 $* | ftest -f }
+	for(i in $*){
+		if(test -d $i)
+			files = ($files `{goblin ls -r 100 $* | ftest -f })
+		if not
+			files = ($files $i)
+	}
 }
 
 sam -S $files
