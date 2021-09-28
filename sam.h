@@ -326,7 +326,7 @@ extern wchar_t empty[];
 extern int  termlocked;
 extern bool  noflush;
 
-#include "shr/inc/mesg.h"
+#include "shr/inc/sam/mesg.h"
 
 void    outTs(Hmesg, int);
 void    outT0(Hmesg);
