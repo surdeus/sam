@@ -67,12 +67,13 @@ typedef enum Hmesg
     Hexit,
     HMAX
 }Hmesg;
-typedef struct Header{
+struct Header{
     uint8_t   type;       /* one of the above */
     uint8_t   count0;     /* low bits of data size */
     uint8_t   count1;     /* high bits of data size */
     uint8_t   data[1];    /* variable size */
-}Header;
+};
+typedef struct Header Header;
 /*
  * File transfer protocol schematic, a la Holzmann
  *  
